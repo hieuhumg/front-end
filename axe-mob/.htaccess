@@ -1,0 +1,12 @@
+
+<IfModule mod_headers.c>
+    Header Set Access-Control-Allow-Origin *
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^/?$ index.php [L]
+    RewriteRule ^about-us?$ about.php [L]
+    RewriteRule ^services?$ services.php [L]
+    RewriteRule ^industry?$ industry.php [L]
+    RewriteRule ^contact-us?$ contact.php [L]
+</IfModule>

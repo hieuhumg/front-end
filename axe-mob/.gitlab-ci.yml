@@ -1,0 +1,20 @@
+before_script:
+  - echo "Deploying Development"
+  - cd /var/www/axe-mob
+building:
+  stage: build
+  script:
+    - sudo chown -R deployer:www-data /var/www/axe-mob
+    - git reset --hard
+    - git pull origin master
+    
+  tags:
+    - axe_mob
+
+
+deploying:
+  stage: deploy
+  tags:
+    - axe_mob
+  script:
+    - echo "Deployend Development"
